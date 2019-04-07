@@ -1,3 +1,5 @@
+package Clase1;
+
 public class CuentaCorriente extends CuentaBancaria{
     public void extraer(double monto) {
         saldo -= monto;

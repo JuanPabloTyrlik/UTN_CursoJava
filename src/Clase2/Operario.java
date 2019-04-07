@@ -1,4 +1,7 @@
 package Clase2;
 
-public class Operario {
+public abstract class Operario extends Empleado {
+    public String obtenerInformacion() {
+        return "Operario ";
+    }
 }

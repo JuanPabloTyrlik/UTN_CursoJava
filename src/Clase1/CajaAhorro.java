@@ -1,4 +1,6 @@
-public class CajaAhorro extends CuentaBancaria{
+package Clase1;
+
+public class CajaAhorro extends CuentaBancaria {
     public void extraer(double monto) {
         if (saldo >= monto) {
             saldo -= monto;

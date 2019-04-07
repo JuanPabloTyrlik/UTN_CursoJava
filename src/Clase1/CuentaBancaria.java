@@ -1,3 +1,5 @@
+package Clase1;
+
 public abstract class CuentaBancaria {
     protected Titular titular;
     protected double saldo;

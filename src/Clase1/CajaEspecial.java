@@ -1,3 +1,5 @@
+package Clase1;
+
 public class CajaEspecial extends CuentaBancaria {
     public void extraer (double monto) {
         if (saldo + 100 >= monto) {
