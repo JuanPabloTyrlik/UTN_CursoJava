@@ -33,7 +33,14 @@ public class Main {
         trompeta.setNombre("trompeta");
         trompeta.setTipo("aire");
         trompeta.tocar();
+        System.out.println();
 
+        Tanque tanque = new Tanque(100, "Nafta", 10);
+        Automovil naftero = new Automovil("FORD", "Focus", 2010, tanque);
+        System.out.println(naftero.hacerKM(40));
 
+        Tanque tanque2 = new Tanque(100, "Gasoil", 5);
+        Automovil gasolero = new Automovil("Ford", "Focus", 2010, tanque2);
+        System.out.println(gasolero.hacerKM(37.5));
     }
 }
