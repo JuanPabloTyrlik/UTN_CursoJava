@@ -1,9 +1,9 @@
-package Clase3;
+package clase3;
 
 public class Automovil {
     protected String marca;
     protected String modelo;
-    protected int año;
+    protected int anio;
     protected Tanque tanque;
 
     public double hacerKM(double distKM) {
@@ -13,10 +13,10 @@ public class Automovil {
     public Automovil() {
     }
 
-    public Automovil(String marca, String modelo, int año, Tanque tanque) {
+    public Automovil(String marca, String modelo, int anio, Tanque tanque) {
         this.marca = marca;
         this.modelo = modelo;
-        this.año = año;
+        this.anio = anio;
         this.tanque = tanque;
     }
 
@@ -36,12 +36,12 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     public Tanque getTanque() {

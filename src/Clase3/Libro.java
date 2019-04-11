@@ -1,4 +1,4 @@
-package Clase3;
+package clase3;
 
 public class Libro {
     private String isbn;

@@ -1,4 +1,4 @@
-package Clase3;
+package clase3;
 
 public class Trompeta extends Instrumento {
     public void tocar() {
