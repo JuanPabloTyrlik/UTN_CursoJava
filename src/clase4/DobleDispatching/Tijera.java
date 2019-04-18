@@ -2,17 +2,22 @@ package clase4.DobleDispatching;
 
 public class Tijera implements Juego{
     @Override
-    public String vsPiedra() {
+    public String vs(Piedra p) {
         return "Pierde";
     }
 
     @Override
-    public String vsTijera() {
-        return "Empate";
+    public String vs(Tijera t) {
+        return "Empata";
     }
 
     @Override
-    public String vsPapel() {
+    public String vs(Papel p) {
         return "Gana";
+    }
+
+    @Override
+    public String getType() {
+        return "Tijera";
     }
 }

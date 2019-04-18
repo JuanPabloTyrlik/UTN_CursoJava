@@ -5,20 +5,22 @@ package clase4.DobleDispatching;
 
 public class Main {
     public static void main(String[] args) {
-        Piedra piedra=new Piedra();
-        Tijera tijera=new Tijera();
-        Papel papel=new Papel();
-        System.out.println(piedra.vsPiedra());
-        System.out.println(piedra.vsPapel());
-        System.out.println(piedra.vsTijera());
+        Piedra piedra = new Piedra();
+        Papel papel = new Papel();
+        Tijera tijera = new Tijera();
+
+        System.out.printf("%s vs %s: %s\n",piedra.getType(),piedra.getType(),piedra.vs(piedra));
+        System.out.printf("%s vs %s: %s\n",piedra.getType(),papel.getType(),piedra.vs(papel));
+        System.out.printf("%s vs %s: %s\n",piedra.getType(),tijera.getType(),piedra.vs(tijera));
         System.out.println();
-        System.out.println(tijera.vsPiedra());
-        System.out.println(tijera.vsPapel());
-        System.out.println(tijera.vsTijera());
+        System.out.printf("%s vs %s: %s\n",papel.getType(),piedra.getType(),papel.vs(piedra));
+        System.out.printf("%s vs %s: %s\n",papel.getType(),papel.getType(),papel.vs(papel));
+        System.out.printf("%s vs %s: %s\n",papel.getType(),tijera.getType(),papel.vs(tijera));
         System.out.println();
-        System.out.println(papel.vsPiedra());
-        System.out.println(papel.vsPapel());
-        System.out.println(papel.vsTijera());
+        System.out.printf("%s vs %s: %s\n",tijera.getType(),piedra.getType(),tijera.vs(piedra));
+        System.out.printf("%s vs %s: %s\n",tijera.getType(),papel.getType(),tijera.vs(papel));
+        System.out.printf("%s vs %s: %s\n",tijera.getType(),tijera.getType(),tijera.vs(tijera));
+
 
 
     }
