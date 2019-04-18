@@ -1,9 +1,8 @@
 package clase4.DobleDispatching;
 
-public interface Juego {
+public abstract class Juego {
+        abstract String vs(Piedra p);
+        abstract String vs(Papel p);
+        abstract String vs(Tijera t);
 
-    String vs(Piedra p);
-    String vs(Papel p);
-    String vs(Tijera p);
-    String getType();
 }

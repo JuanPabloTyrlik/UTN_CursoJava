@@ -21,7 +21,5 @@ public class Main {
         System.out.printf("%s vs %s: %s\n",tijera.getType(),papel.getType(),tijera.vs(papel));
         System.out.printf("%s vs %s: %s\n",tijera.getType(),tijera.getType(),tijera.vs(tijera));
 
-
-
     }
 }

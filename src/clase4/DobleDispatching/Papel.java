@@ -1,23 +1,16 @@
 package clase4.DobleDispatching;
 
-public class Papel implements Juego {
-    @Override
-    public String vs(Piedra p) {
+public class Papel implements IJuego {
+
+    public String vs(Piedra piedra) {
         return "Gana";
     }
-
-    @Override
-    public String vs(Papel p) {
-        return "Empata";
-    }
-
-    @Override
-    public String vs(Tijera p) {
+    public String vs(Papel papel) {return "Empata"; }
+    public String vs(Tijera tijera) {
         return "Pierde";
     }
-
-    @Override
-    public String getType() {
-        return "Papel";
+    public String vs(IJuego j) {
+        return j.vs(this);
     }
+    public String getType() { return "Papel"; }
 }
