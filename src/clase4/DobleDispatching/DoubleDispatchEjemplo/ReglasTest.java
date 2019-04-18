@@ -1,4 +1,4 @@
-package DoubleDispatcheEjemplo;
+package clase4.DobleDispatching.DoubleDispatchEjemplo;
 
 
 public class ReglasTest {
