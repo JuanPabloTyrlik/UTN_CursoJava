@@ -60,6 +60,7 @@ public class Main {
         Personaje.luchar(guerrero, mago);
         System.out.println();
 
+
         
     }
 }
