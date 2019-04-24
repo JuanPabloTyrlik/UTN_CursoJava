@@ -1,7 +1,12 @@
 package clase3.ejercicioIntegrador;
 
 public class Cuadrado extends FiguraGeometrica {
+    public String nombre = "Cuadrado";
     double base, altura;
+
+    public String getNombre() {
+        return nombre;
+    }
 
     @Override
     public double superficie() {
@@ -15,5 +20,8 @@ public class Cuadrado extends FiguraGeometrica {
         } else {
             System.out.println("La base debe ser igual que la altura");
         }
+    }
+    public double perimetro() {
+        return 2*(base+altura);
     }
 }

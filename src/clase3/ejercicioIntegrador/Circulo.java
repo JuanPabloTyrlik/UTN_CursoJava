@@ -1,16 +1,17 @@
 package clase3.ejercicioIntegrador;
 
 public class Circulo extends FiguraGeometrica {
+    public String nombre = "Circulo";
     double radio;
     double[] centro;
-    @Override
-    public double superficie() {
-        return Math.PI*Math.pow(radio,2);
+
+    public String getNombre() {
+        return nombre;
     }
 
     @Override
-    public double perimetro(double[] lados) {
-        return perimetro();
+    public double superficie() {
+        return Math.PI*Math.pow(radio,2);
     }
 
     public double perimetro() {
