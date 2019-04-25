@@ -1,8 +1,8 @@
 package clase3.ejercicioIntegrador;
 
 public class Triangulo extends FiguraGeometrica {
-    public String nombre = "Triangulo";
-    double[] lados;
+    private String nombre = "Triangulo";
+    private double[] lados;
 
     public String getNombre() {
         return nombre;
@@ -14,7 +14,7 @@ public class Triangulo extends FiguraGeometrica {
         return Math.sqrt(s*(s-lados[0])*(s-lados[1])*(s-lados[2]));
     }
 
-    public Triangulo(double[] lados) {
+    Triangulo(double[] lados) {
         if (lados.length == 3) {
             this.lados = lados;
         } else {

@@ -3,18 +3,18 @@ package clase4.Ejercicio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persona {
-    String nombre;
-    String apellido;
-    String dni;
+class Persona {
+    private String nombre;
+    private String apellido;
+    private String dni;
 
-    public Persona(String nombre, String apellido, String dni) {
+    Persona(String nombre, String apellido, String dni) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
     }
 
-    public static List<Persona> invertir(List<Persona> personas) {
+    static List<Persona> invertir(List<Persona> personas) {
         List<Persona> inverso = new ArrayList<>();
         for (int i = personas.size()-1; i >= 0; i--) {
             inverso.add(personas.get(i));
@@ -22,7 +22,7 @@ public class Persona {
         return inverso;
     }
 
-    public String imprimir() {
+    String imprimir() {
         return (dni+"\t"+nombre+"\t"+apellido);
     }
 }

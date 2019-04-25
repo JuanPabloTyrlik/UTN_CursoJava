@@ -1,9 +1,9 @@
 package clase3.ejercicioIntegrador;
 
 public class Circulo extends FiguraGeometrica {
-    public String nombre = "Circulo";
-    double radio;
-    double[] centro;
+    private String nombre = "Circulo";
+    private double radio;
+    private double[] centro;
 
     public String getNombre() {
         return nombre;
@@ -18,7 +18,7 @@ public class Circulo extends FiguraGeometrica {
         return 2*Math.PI*radio;
     }
 
-    public Circulo(double radio, double[] centro) {
+    Circulo(double radio, double[] centro) {
         if (radio > 0 && centro.length >=2) {
             this.radio = radio;
             this.centro = centro;

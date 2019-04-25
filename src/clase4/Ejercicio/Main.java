@@ -3,9 +3,9 @@ package clase4.Ejercicio;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-        List<Persona> personas = new ArrayList<Persona>();
+        List<Persona> personas = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             personas.add(new Persona("Nombre"+i, "Apellido"+i, ""+i));
         }

@@ -1,6 +1,6 @@
 package clase3.ejercicioExtra;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         Avion avion = new Avion();
         Edificio edificio = new Edificio();

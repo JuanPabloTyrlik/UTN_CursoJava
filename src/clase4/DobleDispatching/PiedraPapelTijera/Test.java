@@ -1,6 +1,6 @@
 package clase4.DobleDispatching.PiedraPapelTijera;
 
-public class Test {
+class Test {
 
     public static void main(String[] args) {
         Juego piedra = new Piedra();

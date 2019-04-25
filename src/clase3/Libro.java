@@ -1,6 +1,6 @@
 package clase3;
 
-public class Libro {
+class Libro {
     private String isbn;
     private String titulo;
     private String autor;
@@ -9,7 +9,7 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String isbn, String titulo, String autor, int pags) {
+    Libro(String isbn, String titulo, String autor, int pags) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
@@ -24,7 +24,7 @@ public class Libro {
         this.isbn = isbn;
     }
 
-    public String getTitulo() {
+    String getTitulo() {
         return titulo;
     }
 
@@ -40,7 +40,7 @@ public class Libro {
         this.autor = autor;
     }
 
-    public int getPags() {
+    int getPags() {
         return pags;
     }
 

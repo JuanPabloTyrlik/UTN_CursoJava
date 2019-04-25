@@ -1,14 +1,14 @@
 package clase1;
 
-public abstract class CuentaBancaria {
-    protected Titular titular;
-    protected double saldo;
+abstract class CuentaBancaria {
+    private Titular titular;
+    double saldo;
 
     public Titular getTitular() {
         return titular;
     }
 
-    public void setTitular(Titular titular) {
+    void setTitular(Titular titular) {
         this.titular = titular;
     }
 
@@ -16,7 +16,7 @@ public abstract class CuentaBancaria {
         return saldo;
     }
 
-    public void depositar(double monto) {
+    void depositar(double monto) {
         saldo += monto;
         System.out.println("Deposito realizado");
         System.out.println("Monto:\t"+monto);

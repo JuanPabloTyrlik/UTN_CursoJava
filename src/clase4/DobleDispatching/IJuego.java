@@ -1,6 +1,6 @@
 package clase4.DobleDispatching;
 
-public interface IJuego {
+interface IJuego {
     String vs(Piedra p);
     String vs(Papel p);
     String vs(Tijera t);

@@ -1,8 +1,9 @@
 package clase3.ejercicioIntegrador;
 
 public class Cuadrado extends FiguraGeometrica {
-    public String nombre = "Cuadrado";
-    double base, altura;
+    private String nombre = "Cuadrado";
+    private double base;
+    private double altura;
 
     public String getNombre() {
         return nombre;
@@ -13,7 +14,7 @@ public class Cuadrado extends FiguraGeometrica {
         return Math.pow(base,2);
     }
 
-    public Cuadrado(double base, double altura) {
+    Cuadrado(double base, double altura) {
         if (base == altura) {
             this.base = base;
             this.altura = altura;

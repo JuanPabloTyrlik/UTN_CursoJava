@@ -2,9 +2,9 @@ package clase2;
 
 public abstract class Empleado {
     private int id;
-    protected String nombre;
-    protected String apellido;
-    protected String area;
+    String nombre;
+    String apellido;
+    String area;
 
     public abstract String obtenerInformacion();
 
@@ -14,7 +14,7 @@ public abstract class Empleado {
         this.area = area;
     }
 
-    public Empleado() {
+    Empleado() {
     }
 
     public int getId() {
@@ -22,7 +22,7 @@ public abstract class Empleado {
     }
 
 
-    public String getNombre() {
+    String getNombre() {
         return nombre;
     }
 
@@ -30,7 +30,7 @@ public abstract class Empleado {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
+    String getApellido() {
         return apellido;
     }
 

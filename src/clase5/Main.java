@@ -2,7 +2,7 @@ package clase5;
 
 import java.util.*;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         List<Auto> autos = new ArrayList<>();
         Auto auto1 = new Auto("ABC123", "Ford", "Fiesta", "Negro");

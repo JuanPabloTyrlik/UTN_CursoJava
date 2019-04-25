@@ -2,10 +2,10 @@ package clase5;
 
 import java.util.Objects;
 
-public class Auto {
+class Auto {
     private String modelo, color, marca, patente;
 
-    public Auto(String patente, String marca, String modelo, String color) {
+    Auto(String patente, String marca, String modelo, String color) {
         this.modelo = modelo;
         this.color = color;
         this.marca = marca;
@@ -36,7 +36,7 @@ public class Auto {
         this.marca = marca;
     }
 
-    public String getPatente() {
+    String getPatente() {
         return patente;
     }
 

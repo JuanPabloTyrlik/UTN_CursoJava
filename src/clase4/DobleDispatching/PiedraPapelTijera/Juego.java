@@ -1,8 +1,8 @@
 package clase4.DobleDispatching.PiedraPapelTijera;
 
-public abstract class Juego {
+abstract class Juego {
     public abstract String vs(Juego j);
-    public abstract String vs(Piedra p);
-    public abstract String vs(Papel p);
-    public abstract String vs(Tijera p);
+    protected abstract String vs(Piedra p);
+    protected abstract String vs(Papel p);
+    protected abstract String vs(Tijera p);
 }

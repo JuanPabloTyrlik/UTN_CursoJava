@@ -1,19 +1,19 @@
 package clase3;
 
-public class Automovil {
-    protected String marca;
-    protected String modelo;
-    protected int anio;
-    protected Tanque tanque;
+class Automovil {
+    private String marca;
+    private String modelo;
+    private int anio;
+    private Tanque tanque;
 
-    public double hacerKM(double distKM) {
+    double hacerKM(double distKM) {
         return (distKM*7/100)*tanque.getPrecioLitro();
     }
 
     public Automovil() {
     }
 
-    public Automovil(String marca, String modelo, int anio, Tanque tanque) {
+    Automovil(String marca, String modelo, int anio, Tanque tanque) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;

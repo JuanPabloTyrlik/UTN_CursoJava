@@ -1,8 +1,9 @@
 package clase3.ejercicioIntegrador;
 
 public class Rectangulo extends FiguraGeometrica {
-    public String nombre = "Rectangulo";
-    double base, altura;
+    private String nombre = "Rectangulo";
+    private double base;
+    private double altura;
 
     public String getNombre() {
         return nombre;
@@ -13,7 +14,7 @@ public class Rectangulo extends FiguraGeometrica {
         return base*altura;
     }
 
-    public Rectangulo(double base, double altura) {
+    Rectangulo(double base, double altura) {
         if (base != altura) {
             this.base = base;
             this.altura = altura;

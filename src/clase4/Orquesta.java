@@ -2,7 +2,7 @@ package clase4;
 
 import java.util.List;
 
-public class Orquesta {
+class Orquesta {
     public void tocar(InstrumentoMusical i) {
         i.tocar();
     }

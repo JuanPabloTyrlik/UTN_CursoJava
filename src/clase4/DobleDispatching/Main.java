@@ -3,7 +3,7 @@ package clase4.DobleDispatching;
 //Crear un piedra, papel o tijera usando Doble Dispatching sin usar if o switch
 //REFACTORIZADOR DE CODIGO -> SONARQUBE, JENKINS
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         Piedra piedra = new Piedra();
         Papel papel = new Papel();

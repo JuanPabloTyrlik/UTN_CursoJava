@@ -1,6 +1,6 @@
 package clase2;
 
-public class Empresa {
+class Empresa {
     private String nombre;
     private String direccion;
     public Empleado[] Empleados;

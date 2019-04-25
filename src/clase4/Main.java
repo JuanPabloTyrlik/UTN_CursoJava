@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class Main {
+class Main {
     public static void main(String[] args) {
 /*
         Colecciones:
@@ -80,7 +80,7 @@ public class Main {
 
         //Lista Homogenea
 
-        List<InstrumentoMusical> instrumentos = new LinkedList<InstrumentoMusical>();
+        List<InstrumentoMusical> instrumentos = new LinkedList<>();
         instrumentos.add(new Guitarra());
         instrumentos.add(new InstrumentoDeViento());
         instrumentos.add(new Guitarra());
@@ -90,8 +90,8 @@ public class Main {
 
         // Imprimir lista
 
-        for (int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i));
+        for (Object o : lista) {
+            System.out.println(o);
         }
         System.out.println();
         for (InstrumentoMusical instrumento : instrumentos) {

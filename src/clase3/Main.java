@@ -1,10 +1,6 @@
 package clase3;
 
-import clase3.ejercicioExtra.Avion;
-import clase3.ejercicioExtra.Edificio;
-import clase3.ejercicioExtra.Nube;
-
-public class Main {
+class Main {
     public static void main(String[] args) {
 
         System.out.println();

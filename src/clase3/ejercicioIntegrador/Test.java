@@ -3,7 +3,7 @@ package clase3.ejercicioIntegrador;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+class Test {
     public static void main(String[] args) {
         List<FiguraGeometrica> figurasGeometricas = new ArrayList<>();
         figurasGeometricas.add(new Cuadrado(1,1));

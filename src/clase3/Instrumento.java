@@ -1,13 +1,13 @@
 package clase3;
 
-public abstract class Instrumento {
+abstract class Instrumento {
 
     private String nombre;
     private String tipo;
 
     public abstract void tocar();
 
-    public String getNombre() {
+    String getNombre() {
         return nombre;
     }
 
@@ -19,7 +19,7 @@ public abstract class Instrumento {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    void setTipo(String tipo) {
         this.tipo = tipo;
     }
 }

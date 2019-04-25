@@ -1,17 +1,17 @@
 package clase3;
 
-public abstract class Personaje {
-	protected String clase;
-	protected double fuerza;
-	protected double defensa;
-	protected double skill;
-	protected double vida;
-	protected String superPoder;
-	protected double ataque;
+abstract class Personaje {
+	String clase;
+	double fuerza;
+	double defensa;
+	double skill;
+	double vida;
+	private String superPoder;
+	double ataque;
 
 	public abstract String atacar();
 	
-	public static void luchar(Personaje p1, Personaje p2) {
+	static void luchar(Personaje p1, Personaje p2) {
 		int i=1;
 		System.out.println(p1.clase+" vs "+p2.clase);
 		while (p1.vida > 0 && p2.vida > 0) {
@@ -40,8 +40,7 @@ public abstract class Personaje {
         }
 	}
 
-	public Personaje(String clase, double fuerza, double defensa, double skill,
-			double vida, String superPoder) {
+	Personaje(String clase, double fuerza, double defensa, double skill, double vida, String superPoder) {
 		super();
 		this.clase = clase;
 		this.fuerza = fuerza;

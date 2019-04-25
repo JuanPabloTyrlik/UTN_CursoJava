@@ -1,9 +1,9 @@
 package clase4.DobleDispatching.DoubleDispatchEjemplo;
 
 
-public class ReglasTest {
+class ReglasTest {
 
-	public static void main (String arg[])
+	public static void main (String[] arg)
 	{
 
 		Peleable piedra = new Piedra();
