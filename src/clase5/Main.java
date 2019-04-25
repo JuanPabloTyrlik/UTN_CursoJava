@@ -41,6 +41,24 @@ public class Main {
             System.out.println("\t"+auto.getPatente());
         }
 
+        ArrayList<Persona> personas = new ArrayList<>();
+        personas.add(new Persona("Juan", "Perez", "123123"));
+        personas.add(new Persona("Juan", "Lopez", "123123"));
+        personas.add(new Persona("Facundo", "Perez", "123123"));
+        personas.add(new Persona("Jorge", "Perez", "123123"));
+        personas.add(new Persona("Fernando", "Perez", "123123"));
+        personas.add(new Persona("Gaston", "Perez", "123123"));
+        personas.add(new Persona("Rodrigo", "Perez", "123123"));
+        personas.add(new Persona("Gonzalo", "Perez", "123123"));
+        Agenda agenda = new Agenda();
+        for (Persona persona : personas) {
+            agenda.agregarPersonas(persona);
+        }
+        System.out.println("Letra A: "+agenda.getPersonas("A"));
+        System.out.println("Letra J: "+agenda.getPersonas("J"));
+        System.out.println("Letra F: "+agenda.getPersonas("F"));
+        System.out.println("Letra G: "+agenda.getPersonas("G"));
+
 
 
 
