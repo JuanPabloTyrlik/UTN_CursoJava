@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class CocheraController {
-    private Cochera cochera;
+    private static Cochera cochera;
     private ArrayList<Estacionamiento> estacionamientos;
 
-    public void iniciar() {
-        //Crea una cochera y lista estacionamientos
+    public static void iniciar() {
+
         //imprime menu
     }
 
@@ -33,6 +33,18 @@ public class CocheraController {
         //Finalizar estacionamiento para el auto y devolver monto a pagar
         //True o false para ver si se pudo realizar.
         return false;
+    }
+
+    public static Cochera getCochera() {
+        return cochera;
+    }
+
+    public ArrayList<Estacionamiento> getEstacionamientos() {
+        return estacionamientos;
+    }
+
+    public void setEstacionamientos(ArrayList<Estacionamiento> estacionamientos) {
+        this.estacionamientos = estacionamientos;
     }
 
 }

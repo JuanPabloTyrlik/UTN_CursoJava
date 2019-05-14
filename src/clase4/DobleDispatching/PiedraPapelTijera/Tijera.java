@@ -1,6 +1,6 @@
 package clase4.DobleDispatching.PiedraPapelTijera;
 
-public class Tijera extends Juego {
+class Tijera extends Juego {
     @Override
     public String vs(Juego j) {
         return j.vs(this);

@@ -1,6 +1,6 @@
 package clase4.DobleDispatching;
 
-public class Piedra implements IJuego {
+class Piedra implements IJuego {
 
     public String vs(Piedra piedra) {
         return "Empata";

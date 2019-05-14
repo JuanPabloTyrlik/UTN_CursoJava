@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Cochera {
+    private static Cochera cochera;
     private double precioHora;
     private HashMap<Integer, ArrayList<Piso>> pisos;
 
@@ -23,7 +24,7 @@ public class Cochera {
         this.pisos = pisos;
     }
 
-    public Cochera(double precioHora, HashMap<Integer, ArrayList<Piso>> pisos) {
+    private Cochera(double precioHora, HashMap<Integer, ArrayList<Piso>> pisos) {
         this.precioHora = precioHora;
         this.pisos = pisos;
     }
@@ -33,5 +34,11 @@ public class Cochera {
             return true;
         }
         return false;
+    }
+
+    public static Cochera getCochera(double precioHora, HashMap<Integer, ArrayList<Piso>> pisos) {
+        if (cochera==null)
+            cochera = new Cochera(precioHora, pisos);
+        return cochera;
     }
 }

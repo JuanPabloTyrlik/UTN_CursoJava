@@ -1,6 +1,6 @@
 package clase4.DobleDispatching.DoubleDispatchEjemplo;
 
-public class Piedra implements Peleable {
+class Piedra implements Peleable {
 
     @Override
     public String vs(Peleable peleable) {

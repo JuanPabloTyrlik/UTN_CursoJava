@@ -1,6 +1,6 @@
 package clase3;
 
-public class Tanque {
+class Tanque {
     private double litros;
     private String combustible;
     private double precioLitro;

@@ -1,6 +1,6 @@
 package clase4.DobleDispatching;
 
-public class Tijera implements IJuego {
+class Tijera implements IJuego {
 
     public String vs(Piedra p) {
         return "Pierde";

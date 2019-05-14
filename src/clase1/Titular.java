@@ -1,6 +1,6 @@
 package clase1;
 
-public class Titular {
+class Titular {
     private String nombre;
     private String apellido;
     private int dni;

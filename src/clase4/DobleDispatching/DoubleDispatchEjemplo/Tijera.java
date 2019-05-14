@@ -1,6 +1,6 @@
 package clase4.DobleDispatching.DoubleDispatchEjemplo;
 
-public class Tijera implements Peleable {
+class Tijera implements Peleable {
 
 	@Override
     public String vs(Peleable peleable) {

@@ -1,0 +1,86 @@
+package clase6.Estacionamiento.Controller;
+
+import clase6.Estacionamiento.Model.Cochera;
+import clase6.Estacionamiento.Model.Piso;
+import clase6.Estacionamiento.Model.Ticket;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Map;
+import java.util.Scanner;
+
+public class CocheraController {
+    private static CocheraController cocheraController;
+    private Cochera cochera;
+    private ArrayList<Ticket> tickets = new ArrayList<>();
+
+    public static CocheraController getCocheraController() {
+        if (cocheraController == null) {
+            cocheraController = new CocheraController();
+        }
+        return cocheraController;
+    }
+
+    private CocheraController() {
+        super();
+    }
+
+    public void iniciarEstacionamiento(String patente) {
+        if (cochera == null) {
+            System.out.println("Necesita definir una cochera");
+        } else {
+            if (cochera.getEspacios() == null) {
+                System.out.println("Necesita definir al menos un piso");
+            } else {
+                for (Map.Entry<Integer, Piso> entry : cochera.getEspacios().entrySet()) {
+                    if (entry.getValue().hayLugarDisponible() == true) {
+                        System.out.println("Estacione en el piso "+entry.getKey());
+                        entry.getValue().estacionar(patente);
+                        tickets.add(new Ticket(new Date(), patente));
+                    } else {
+                        System.out.println("No hay lugares disponibles");
+                    }
+                }
+            }
+        }
+    }
+
+    public void finalizarEstacionamiento(String patente) {
+        for (Piso piso : cochera.getEspacios().values()) {
+            piso.retirar(patente);
+            for (Ticket ticket : tickets) {
+                if (ticket.getPatente().equals(patente)) {
+                    ticket.finalizar();
+                    break;
+                }
+            }
+        }
+    }
+
+    public void crearCochera() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el precio por hora");
+        cochera = new Cochera(Integer.parseInt(scanner.next()));
+        System.out.println("Cochera Creada");
+        System.out.println("Ingrese numero de piso");
+        int numPiso = Integer.parseInt(scanner.next());
+        System.out.println("Ingrese cantidad de lugares");
+        int lugarPiso = Integer.parseInt(scanner.next());
+        cochera.getEspacios().put(numPiso,new Piso(lugarPiso));
+    }
+
+    public void crearCochera(double precioPorHora, int numPiso, int lugaresPiso) {
+        cochera = new Cochera(precioPorHora);
+        cochera.getEspacios().put(numPiso,new Piso(lugaresPiso));
+    }
+
+    public void ampliarCochera(int numPiso, int lugares) {
+        cochera.getEspacios().put(numPiso,new Piso(lugares));
+    }
+
+    public void imprimirTickets() {
+        for (Ticket ticket : tickets) {
+            System.out.println(ticket.toString());
+        }
+    }
+}

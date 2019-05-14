@@ -1,6 +1,6 @@
 package clase4.DobleDispatching.DoubleDispatchEjemplo;
 
-interface Peleable {
+public interface Peleable {
 
     String vs(Peleable peleable);
 
