@@ -26,6 +26,7 @@ public class CocheraController {
     }
 
     public void iniciarEstacionamiento(String patente) {
+        boolean estacionado = false;
         if (cochera == null) {
             System.out.println("Necesita definir una cochera");
         } else {
@@ -34,13 +35,15 @@ public class CocheraController {
             } else {
                 for (Map.Entry<Integer, Piso> entry : cochera.getEspacios().entrySet()) {
                     if (entry.getValue().hayLugarDisponible() == true) {
-                        System.out.println("Estacione en el piso "+entry.getKey());
+                        System.out.println("Estacione en el piso " + entry.getKey());
                         entry.getValue().estacionar(patente);
                         tickets.add(new Ticket(new Date(), patente));
-                    } else {
-                        System.out.println("No hay lugares disponibles");
+                        estacionado = true;
+                        break;
                     }
                 }
+                if (!estacionado)
+                    System.out.println("No hay lugares disponibles");
             }
         }
     }
@@ -66,16 +69,16 @@ public class CocheraController {
         int numPiso = Integer.parseInt(scanner.next());
         System.out.println("Ingrese cantidad de lugares");
         int lugarPiso = Integer.parseInt(scanner.next());
-        cochera.getEspacios().put(numPiso,new Piso(lugarPiso));
+        cochera.getEspacios().put(numPiso, new Piso(lugarPiso));
     }
 
     public void crearCochera(double precioPorHora, int numPiso, int lugaresPiso) {
         cochera = new Cochera(precioPorHora);
-        cochera.getEspacios().put(numPiso,new Piso(lugaresPiso));
+        cochera.getEspacios().put(numPiso, new Piso(lugaresPiso));
     }
 
     public void ampliarCochera(int numPiso, int lugares) {
-        cochera.getEspacios().put(numPiso,new Piso(lugares));
+        cochera.getEspacios().put(numPiso, new Piso(lugares));
     }
 
     public void imprimirTickets() {

@@ -11,12 +11,24 @@ public class Piso {
         return lugarDisponible;
     }
 
+    public int lugar(String patente) {
+        int i=1;
+        for (String autosEstacionado : autosEstacionados) {
+            if (autosEstacionado.equals(patente)) {
+                return i;
+            } else {
+                i++;
+            }
+        }
+        return i;
+    }
+
     public void estacionar(String patente) {
         if (autosEstacionados.size()<cantLugares) {
             autosEstacionados.add(patente);
-            System.out.println("Auto con patente "+patente+" ha estacionado en el lugar "+autosEstacionados.size());
-        } else {
+            System.out.println("Auto con patente "+patente+" ha estacionado en el lugar "+lugar(patente));
             if (autosEstacionados.size()==cantLugares) lugarDisponible=false;
+        } else {
             System.out.println("No hay lugares disponibles en este piso");
         }
     }
