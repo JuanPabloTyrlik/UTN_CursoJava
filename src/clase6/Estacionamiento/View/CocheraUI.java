@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class CocheraUI {
     private CocheraController cocheraController = CocheraController.getCocheraController();
 
+
     public void estacionar() {
         System.out.println("Ingrese patente");
         Scanner scanner = new Scanner(System.in);
@@ -42,7 +43,6 @@ public class CocheraUI {
         if (respuesta.equals("Y") || respuesta.equals("y")) {
             definirPiso();
         }
-        iniciar();
     }
 
     public void definirPiso() {
@@ -76,7 +76,6 @@ public class CocheraUI {
                 break;
             case "X":
             case "x":
-                iniciar();
                 break;
             default:
                 System.out.println("Opcion invalida");

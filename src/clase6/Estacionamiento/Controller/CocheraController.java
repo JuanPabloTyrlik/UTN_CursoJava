@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CocheraController {
     private static CocheraController cocheraController;
     private Cochera cochera;
     private ArrayList<Ticket> tickets = new ArrayList<>();
 
-    public static CocheraController getCocheraController() {
+    public synchronized  static  CocheraController getCocheraController() {
         if (cocheraController == null) {
             cocheraController = new CocheraController();
         }
@@ -25,38 +27,53 @@ public class CocheraController {
         super();
     }
 
+    public boolean validPatente(String patente) {
+        String regex = "^([a-zA-Z]{3}[0-9]{3}|[a-zA-z]{2}[0-9]{3}[a-zA-Z]{2})";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(patente);
+        return matcher.find();
+    }
+
     public void iniciarEstacionamiento(String patente) {
         boolean estacionado = false;
-        if (cochera == null) {
-            System.out.println("Necesita definir una cochera");
-        } else {
-            if (cochera.getEspacios() == null) {
-                System.out.println("Necesita definir al menos un piso");
+        if (validPatente(patente)) {
+            if (cochera == null) {
+                System.out.println("Necesita definir una cochera");
             } else {
-                for (Map.Entry<Integer, Piso> entry : cochera.getEspacios().entrySet()) {
-                    if (entry.getValue().hayLugarDisponible() == true) {
-                        System.out.println("Estacione en el piso " + entry.getKey());
-                        entry.getValue().estacionar(patente);
-                        tickets.add(new Ticket(new Date(), patente));
-                        estacionado = true;
-                        break;
+                if (cochera.getEspacios() == null) {
+                    System.out.println("Necesita definir al menos un piso");
+                } else {
+                    for (Map.Entry<Integer, Piso> entry : cochera.getEspacios().entrySet()) {
+                        if (entry.getValue().hayLugarDisponible() == true) {
+                            System.out.println("Estacione en el piso " + entry.getKey());
+                            entry.getValue().estacionar(patente);
+                            tickets.add(new Ticket(new Date(), patente));
+                            estacionado = true;
+                            break;
+                        }
                     }
+                    if (!estacionado)
+                        System.out.println("No hay lugares disponibles");
                 }
-                if (!estacionado)
-                    System.out.println("No hay lugares disponibles");
             }
+        } else {
+            System.out.println("Ingrese una patente valida");
         }
     }
 
     public void finalizarEstacionamiento(String patente) {
-        for (Piso piso : cochera.getEspacios().values()) {
-            piso.retirar(patente);
-            for (Ticket ticket : tickets) {
-                if (ticket.getPatente().equals(patente)) {
-                    ticket.finalizar();
-                    break;
+        if (validPatente(patente)) {
+            for (Piso piso : cochera.getEspacios().values()) {
+                piso.retirar(patente);
+                for (Ticket ticket : tickets) {
+                    if (ticket.getPatente().equals(patente)) {
+                        ticket.finalizar();
+                        break;
+                    }
                 }
             }
+        } else {
+            System.out.println("Ingrese una patente valida");
         }
     }
 
