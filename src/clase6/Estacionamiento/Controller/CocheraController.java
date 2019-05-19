@@ -16,7 +16,7 @@ public class CocheraController {
     private Cochera cochera;
     private ArrayList<Ticket> tickets = new ArrayList<>();
 
-    public synchronized  static  CocheraController getCocheraController() {
+    public synchronized static CocheraController getCocheraController() {
         if (cocheraController == null) {
             cocheraController = new CocheraController();
         }
