@@ -1,6 +1,7 @@
 package clase8.Estacionamiento.View;
 
 import clase8.Estacionamiento.Controller.CocheraController;
+import clase8.Estacionamiento.Model.Vehiculo;
 
 import java.util.Scanner;
 
@@ -26,6 +27,7 @@ public class CocheraUI {
 
     }
 
+
     public void iniciar() {
         System.out.println("\nBienvenido al sistema de cochera");
         System.out.println("Ingrese la opcion deseada");
@@ -33,6 +35,9 @@ public class CocheraUI {
         System.out.println("2 Retirar");
         System.out.println("3 Imprimir");
         System.out.println("4 Nueva Cochera");
+        System.out.println("5 Registrar Vehiculo");
+        System.out.println("6 Calcular Ingresos");
+        System.out.println("7 Calcular Ingresos de un Vehiculo");
         System.out.println("0 Salir");
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextLine()) {

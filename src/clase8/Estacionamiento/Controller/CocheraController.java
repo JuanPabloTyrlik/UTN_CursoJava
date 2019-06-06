@@ -34,4 +34,12 @@ public class CocheraController {
     public double calcularIngresos() {
         return 0;
     }
+
+    public double calcularMonto(Vehiculo v) {
+        return 0;
+    }
+
+    public void registrarVehiculo(Vehiculo v) {
+
+    }
 }

@@ -12,7 +12,7 @@ public class Lugar {
     }
 
     public boolean isOccupied(Vehiculo v) {
-        return false;
+        return (v!=null);
     }
 
 }

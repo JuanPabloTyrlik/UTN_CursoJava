@@ -2,6 +2,7 @@ package clase8.Estacionamiento.Model;
 
 import clase8.Estacionamiento.Exceptions.PatenteInvalidaException;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,5 +30,20 @@ public class Vehiculo {
 
     public void setPatente(String patente) {
         this.patente = patente;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Vehiculo vehiculo = (Vehiculo) o;
+        return Objects.equals(patente, vehiculo.patente);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(patente);
     }
 }
