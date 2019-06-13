@@ -1,10 +1,18 @@
 package clase8.Estacionamiento.Controller;
 
+import clase8.Estacionamiento.Model.Ticket;
 import clase8.Estacionamiento.Model.Vehiculo;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CocheraController {
 
     private static CocheraController cochera;
+    private Set<Vehiculo> vehiculos = new HashSet<>();
+    private List<Ticket> tickets = new ArrayList<>();
 
     private CocheraController() {
             super();
@@ -31,7 +39,7 @@ public class CocheraController {
 
     }
 
-    public double calcularIngresos() {
+    public double calcularIngreso() {
         return 0;
     }
 

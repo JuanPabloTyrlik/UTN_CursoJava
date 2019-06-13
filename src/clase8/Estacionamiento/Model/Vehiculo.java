@@ -28,8 +28,12 @@ public class Vehiculo {
         return patente;
     }
 
-    public void setPatente(String patente) {
-        this.patente = patente;
+    public void setPatente(String patente) throws PatenteInvalidaException{
+        if (isPatente(patente)) {
+            this.patente = patente;
+        } else {
+            throw new PatenteInvalidaException();
+        }
     }
 
     @Override

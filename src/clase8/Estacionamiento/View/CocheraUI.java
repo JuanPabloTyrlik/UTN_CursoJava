@@ -23,7 +23,7 @@ public class CocheraUI {
 
     }
 
-    private void calcularIngresos() {
+    private void calcularIngreso() {
 
     }
 
