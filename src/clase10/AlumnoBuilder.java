@@ -10,16 +10,20 @@ public class AlumnoBuilder {
     public void buildAlumno (String filePath) {
         try {
             BufferedReader file = new BufferedReader(new FileReader(new File(filePath)));
-            String[] linea = file.readLine().split(",");
-            while (linea!=null) {
+            String line = file.readLine();
+            while (line!=null) {
+                String[] linea = line.split(",");
                 Alumno alumno = new Alumno(linea[0],linea[1]);
-                alumno.actualizarNota(linea[2],linea[3]);
+                alumno.actualizarNota(linea[2],Double.parseDouble(linea[3]));
+                AlumnoWriter alumnoWriter = new AlumnoWriter();
+                alumnoWriter.writeAlumno(alumno);
+                line = file.readLine();
             }
+            file.close();
         } catch (IOException e) {
-
-        } finally {
-
+            System.out.println("Error al leer/modificar el archivo");
+        } catch (NullPointerException e) {
+            System.out.println("El archivo está vacio");
         }
-
     }
 }

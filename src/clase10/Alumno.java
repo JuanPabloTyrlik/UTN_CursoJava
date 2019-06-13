@@ -1,5 +1,6 @@
 package clase10;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,14 +8,14 @@ public class Alumno {
 
     private String nombre;
     private String apellido;
-    private Map<String, String> materias = new HashMap<>();
+    private Map<String, Double> materias = new HashMap<>();
 
     public Alumno(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
-    public void actualizarNota (String materia, String nota) {
+    public void actualizarNota (String materia, Double nota) {
         materias.put(materia,nota);
     }
 
@@ -34,11 +35,11 @@ public class Alumno {
         this.apellido = apellido;
     }
 
-    public Map<String, String> getMaterias() {
+    public Map<String, Double> getMaterias() {
         return materias;
     }
 
-    public void setMaterias(Map<String, String> materias) {
+    public void setMaterias(Map<String, Double> materias) {
         this.materias = materias;
     }
 
