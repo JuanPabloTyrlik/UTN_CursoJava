@@ -1,75 +1,67 @@
 package clase12.agenda;
 
+import java.util.Objects;
+
 public class Persona {
 
-	private String dni;
-	private String nombre;
-	private String apellido;
+    private int dni;
+    private String nombre;
+    private String apellido;
 
-	public String getDni() {
-		return dni;
-	}
+    public int getDni() {
+        return dni;
+    }
 
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getApellido() {
-		return apellido;
-	}
+    public String getApellido() {
+        return apellido;
+    }
 
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-	public Persona(String dni, String nombre, String apellido) {
-		super();
-		this.dni = dni;
-		this.nombre = nombre;
-		this.apellido = apellido;
-	}
+    public Persona(int dni, String nombre, String apellido) {
+        super();
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
-		return result;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Persona persona = (Persona) o;
+        return dni == persona.dni && Objects.equals(nombre, persona.nombre) && Objects.equals(apellido, persona.apellido);
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Persona other = (Persona) obj;
-		if (dni == null) {
-			if (other.dni != null)
-				return false;
-		} else if (!dni.equals(other.dni))
-			return false;
-		return true;
-	}
+    @Override
+    public int hashCode() {
+        return Objects.hash(dni, nombre, apellido);
+    }
 
-	public Persona() {
-		super();
-	}
+    public Persona() {
+        super();
+    }
 
-	@Override
-	public String toString() {
-		return "Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + "]";
-	}
+    @Override
+    public String toString() {
+        return "Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + "]";
+    }
 
-	
+
 }
