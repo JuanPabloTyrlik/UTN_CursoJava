@@ -35,8 +35,8 @@ public class PersonaController {
             Connection c = getConnection();
             try {
                 Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Persona WHERE DNI = " + p.getDni());
-                if (!rs.next()) {
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Persona WHERE DNI = '" + p.getDni()+"'");
+                if (rs.isBeforeFirst()) {
                     throw new PersonaException("La persona ya está en la agenda");
                 } else {
                     String sql = "INSERT INTO Persona (DNI, NOMBRE, APELLIDO) VALUES (" + p.getDni() + ", '" + p.getNombre() + "', '" + p.getApellido() + "')";
@@ -45,6 +45,7 @@ public class PersonaController {
                 }
             } catch (SQLException e) {
                 rollback(c);
+                throw new PersonaException("No se pudo agregar a la persona");
             } catch (Exception e) {
                 rollback(c);
             } finally {
@@ -83,20 +84,47 @@ public class PersonaController {
         }
     }
 
-    public boolean delete(Persona p) throws PersonaException {
-        if (!personas.contains(p))
-            throw new PersonaException("No existe la persona");
-        personas.remove(p);
-        return true;
+    public void delete(Persona p) throws PersonaException {
+        try {
+            Connection c = getConnection();
+            try {
+                PreparedStatement stmt = c.prepareStatement("DELETE FROM Persona WHERE DNI = '?'");
+                stmt.setInt(1, p.getDni());
+                stmt.execute();
+                c.commit();
+            } catch (SQLException e) {
+                rollback(c);
+                throw new PersonaException("No se pudo borrar la persona");
+            } finally {
+                close(c);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new PersonaException("No se pudo borrar la persona");
+        }
     }
 
     public Persona search(String nombre) throws PersonaException {
-        for (Persona persona : personas) {
-            if (persona.getNombre().equals(nombre)) {
-                return persona;
+        try {
+            Connection c = getConnection();
+            try {
+                PreparedStatement stmt = c.prepareStatement("SELECT * FROM Persona WHERE Nombre = '?'");
+                stmt.setString(1,nombre);
+                ResultSet rs = stmt.executeQuery();
+                Integer dni = Integer.parseInt(rs.getString("DNI"));
+                String apellido = rs.getString("Apellido");
+                c.commit();
+                return new Persona(dni, nombre, apellido);
+            } catch (SQLException e) {
+                rollback(c);
+                throw new PersonaException("No existe la persona");
+            } finally {
+                close(c);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new PersonaException("No existe la persona");
         }
-        throw new PersonaException("No existe la persona");
     }
 
     public boolean testConnection() {
