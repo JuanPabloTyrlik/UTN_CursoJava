@@ -7,8 +7,8 @@ import java.sql.DriverManager;
 public class PersonaDB {
 
     private static String DRIVER = "org.h2.Driver";
-    //private static String URL = "jdbc:h2:C:/Users/juan.pablo.tyrlik/IdeaProjects/H2";
-    private static String URL = "jdbc:h2:~/test";
+    private static String URL = "jdbc:h2:C:/Users/juan.pablo.tyrlik/IdeaProjects/H2";
+    //private static String URL = "jdbc:h2:~/test";
     private static String USER = "JP";
     private static String PASS = "JP";
 

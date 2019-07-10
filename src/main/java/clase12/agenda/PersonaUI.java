@@ -29,11 +29,11 @@ public class PersonaUI {
 
     public void consultar()
     {
-        System.out.println("Ingreso nombre");
+        System.out.println("Ingrese dni");
         Scanner sc = new Scanner(System.in);
-        String nombre = sc.nextLine();
+        String dni = sc.nextLine();
         try {
-            Persona p =pc.search(nombre);
+            Persona p =pc.search(dni);
             if (p!=null)
             {
                 System.out.println(p.toString());
@@ -44,7 +44,7 @@ public class PersonaUI {
             }
         }catch (PersonaException p)
         {
-            System.out.println("No encontrar la persona "+p.getMessage());
+            System.out.println("No se encontró la persona "+p.getMessage());
         }
         iniciar();
     }
@@ -61,16 +61,12 @@ public class PersonaUI {
     public void baja()
     {
 
-        System.out.println("Ingreso nombre");
+        System.out.println("Ingrese dni");
         Scanner sc = new Scanner(System.in);
-        String nombre = sc.nextLine();
+        String dni = sc.nextLine();
         try {
-            Persona p =pc.search(nombre);
+            Persona p =pc.search(dni);
             if (p!=null)
-            {
-                System.out.println(p.toString());
-            }
-            else
             {
                 pc.delete(p);
             }

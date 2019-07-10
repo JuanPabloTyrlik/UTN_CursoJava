@@ -88,7 +88,7 @@ public class PersonaController {
         try {
             Connection c = getConnection();
             try {
-                PreparedStatement stmt = c.prepareStatement("DELETE FROM Persona WHERE DNI = '?'");
+                PreparedStatement stmt = c.prepareStatement("DELETE FROM PERSONA WHERE DNI=?");
                 stmt.setInt(1, p.getDni());
                 stmt.execute();
                 c.commit();
@@ -104,17 +104,23 @@ public class PersonaController {
         }
     }
 
-    public Persona search(String nombre) throws PersonaException {
+    public Persona search(String dni) throws PersonaException {
         try {
             Connection c = getConnection();
             try {
-                PreparedStatement stmt = c.prepareStatement("SELECT * FROM Persona WHERE Nombre = '?'");
-                stmt.setString(1,nombre);
+                PreparedStatement stmt = c.prepareStatement("SELECT * FROM Persona WHERE DNI=?");
+                stmt.setString(1,dni);
+                //System.out.println(stmt);
                 ResultSet rs = stmt.executeQuery();
-                Integer dni = Integer.parseInt(rs.getString("DNI"));
-                String apellido = rs.getString("Apellido");
-                c.commit();
-                return new Persona(dni, nombre, apellido);
+                //Integer dni = Integer.parseInt(rs.getString("DNI"));
+                if (rs.next()) {
+                    String apellido = rs.getString("Apellido");
+                    String nombre = rs.getString("Nombre");
+                    c.commit();
+                    return new Persona(Integer.parseInt(dni), nombre, apellido);
+                } else {
+                    throw new PersonaException("Not found");
+                }
             } catch (SQLException e) {
                 rollback(c);
                 throw new PersonaException("No existe la persona");
