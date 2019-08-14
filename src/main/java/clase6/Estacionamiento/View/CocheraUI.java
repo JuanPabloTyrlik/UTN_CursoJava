@@ -47,14 +47,14 @@ public class CocheraUI {
 
     public void definirPiso() {
         String respuesta = "Y";
-        int num,lugares;
+        int num, lugares;
         Scanner scanner = new Scanner(System.in);
         while (respuesta.equals("Y") || respuesta.equals("y")) {
             System.out.println("Ingrese numero de piso");
             num = Integer.parseInt(scanner.nextLine());
             System.out.println("Ingrese cantidad de lugares");
             lugares = Integer.parseInt(scanner.nextLine());
-            cocheraController.ampliarCochera(num,lugares);
+            cocheraController.ampliarCochera(num, lugares);
             System.out.println("Desea agregar otro piso? Y/N");
             respuesta = scanner.nextLine();
         }

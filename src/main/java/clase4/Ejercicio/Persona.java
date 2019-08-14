@@ -16,13 +16,13 @@ class Persona {
 
     static List<Persona> invertir(List<Persona> personas) {
         List<Persona> inverso = new ArrayList<>();
-        for (int i = personas.size()-1; i >= 0; i--) {
+        for (int i = personas.size() - 1; i >= 0; i--) {
             inverso.add(personas.get(i));
         }
         return inverso;
     }
 
     String imprimir() {
-        return (dni+"\t"+nombre+"\t"+apellido);
+        return (dni + "\t" + nombre + "\t" + apellido);
     }
 }

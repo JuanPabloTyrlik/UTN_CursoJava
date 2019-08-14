@@ -12,7 +12,7 @@ public class Piso {
     }
 
     public int lugar(String patente) {
-        int i=1;
+        int i = 1;
         for (String autosEstacionado : autosEstacionados) {
             if (autosEstacionado.equals(patente)) {
                 return i;
@@ -24,10 +24,11 @@ public class Piso {
     }
 
     public void estacionar(String patente) {
-        if (autosEstacionados.size()<cantLugares) {
+        if (autosEstacionados.size() < cantLugares) {
             autosEstacionados.add(patente);
-            System.out.println("Auto con patente "+patente+" ha estacionado en el lugar "+lugar(patente));
-            if (autosEstacionados.size()==cantLugares) lugarDisponible=false;
+            System.out.println("Auto con patente " + patente + " ha estacionado en el lugar " + lugar(patente));
+            if (autosEstacionados.size() == cantLugares)
+                lugarDisponible = false;
         } else {
             System.out.println("No hay lugares disponibles en este piso");
         }
@@ -36,13 +37,13 @@ public class Piso {
     public void retirar(String patente) {
         if (autosEstacionados.contains(patente)) {
             autosEstacionados.remove(patente);
-            lugarDisponible=true;
-            System.out.println("El auto con patente "+patente+" ha sido retirado");
+            lugarDisponible = true;
+            System.out.println("El auto con patente " + patente + " ha sido retirado");
         }
     }
 
     public Piso(int cantLugares) {
-        if (cantLugares>0) {
+        if (cantLugares > 0) {
             lugarDisponible = true;
             this.cantLugares = cantLugares;
             autosEstacionados = new ArrayList<>();

@@ -1,7 +1,6 @@
 package clase6.Modelo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Piso {
     private boolean lleno = false;

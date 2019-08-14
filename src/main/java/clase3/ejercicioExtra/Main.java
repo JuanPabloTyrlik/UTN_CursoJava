@@ -5,7 +5,7 @@ class Main {
         Avion avion = new Avion();
         Edificio edificio = new Edificio();
         Nube nube = new Nube();
-        System.out.println("Nube: "+avion.atravezar(nube));
-        System.out.println("Edificio: "+avion.atravezar(edificio));
+        System.out.println("Nube: " + avion.atravezar(nube));
+        System.out.println("Edificio: " + avion.atravezar(edificio));
     }
 }

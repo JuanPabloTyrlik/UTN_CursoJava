@@ -2,52 +2,43 @@ package clase14.con_hilos;
 
 import clase14.sin_hilos.Cliente;
 
-public class CajeraThread  extends Thread {
+public class CajeraThread extends Thread {
 
-	private String nombre;
+    private String nombre;
 
-	private Cliente cliente;
+    private Cliente cliente;
 
-	private long initialTime;
+    private long initialTime;
 
-	// Constructor, getter & setter
-	
+    // Constructor, getter & setter
 
-	@Override
-	public void run() {
 
-		System.out.println("La cajera " + this.nombre + " COMIENZA A PROCESAR LA COMPRA DEL CLIENTE " 
-					+ this.cliente.getNombre() + " EN EL TIEMPO: " 
-					+ (System.currentTimeMillis() - this.initialTime) / 1000 
-					+ "seg");
+    @Override
+    public void run() {
 
-		for (int i = 0; i < this.cliente.getCarroCompra().length; i++) { 
-			this.esperarXsegundos(cliente.getCarroCompra()[i]); 
-			System.out.println("Procesado el producto " + (i + 1) 
-			+ " del cliente " + this.cliente.getNombre() + "->Tiempo: " 
-			+ (System.currentTimeMillis() - this.initialTime) / 1000 
-			+ "seg");
-		}
+        System.out.println("La cajera " + this.nombre + " COMIENZA A PROCESAR LA COMPRA DEL CLIENTE " + this.cliente.getNombre() + " EN EL TIEMPO: " + (System.currentTimeMillis() - this.initialTime) / 1000 + "seg");
 
-		System.out.println("La cajera " + this.nombre + " HA TERMINADO DE PROCESAR " 
-						+ this.cliente.getNombre() + " EN EL TIEMPO: " 
-						+ (System.currentTimeMillis() - this.initialTime) / 1000 
-						+ "seg");
-	}
+        for (int i = 0; i < this.cliente.getCarroCompra().length; i++) {
+            this.esperarXsegundos(cliente.getCarroCompra()[i]);
+            System.out.println("Procesado el producto " + (i + 1) + " del cliente " + this.cliente.getNombre() + "->Tiempo: " + (System.currentTimeMillis() - this.initialTime) / 1000 + "seg");
+        }
 
-	public CajeraThread(String nombre, Cliente cliente, long initialTime) {
-		super();
-		this.nombre = nombre;
-		this.cliente = cliente;
-		this.initialTime = initialTime;
-	}
+        System.out.println("La cajera " + this.nombre + " HA TERMINADO DE PROCESAR " + this.cliente.getNombre() + " EN EL TIEMPO: " + (System.currentTimeMillis() - this.initialTime) / 1000 + "seg");
+    }
 
-	private void esperarXsegundos(int segundos) {
-		try {
-			Thread.sleep(segundos * 1000);
-		} catch (InterruptedException ex) {
-			Thread.currentThread().interrupt();
-		}
-	}
+    public CajeraThread(String nombre, Cliente cliente, long initialTime) {
+        super();
+        this.nombre = nombre;
+        this.cliente = cliente;
+        this.initialTime = initialTime;
+    }
+
+    private void esperarXsegundos(int segundos) {
+        try {
+            Thread.sleep(segundos * 1000);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
 
 }

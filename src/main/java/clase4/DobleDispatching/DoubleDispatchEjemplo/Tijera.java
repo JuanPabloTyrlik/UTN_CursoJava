@@ -2,7 +2,7 @@ package clase4.DobleDispatching.DoubleDispatchEjemplo;
 
 class Tijera implements Peleable {
 
-	@Override
+    @Override
     public String vs(Peleable peleable) {
         return peleable.vs(this);
     }
@@ -23,8 +23,8 @@ class Tijera implements Peleable {
     }
 
     @Override
-	public String toString() {
-		return "Tijera";
-	}
+    public String toString() {
+        return "Tijera";
+    }
 
 }

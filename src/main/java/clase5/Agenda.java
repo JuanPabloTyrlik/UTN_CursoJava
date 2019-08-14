@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
- class Agenda {
+class Agenda {
     private final Map<String, ArrayList<Persona>> agenda = new HashMap<>();
 
     void agregarPersonas(Persona persona) {

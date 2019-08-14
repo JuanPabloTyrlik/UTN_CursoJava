@@ -11,7 +11,7 @@ public class Cuadrado extends FiguraGeometrica {
 
     @Override
     public double superficie() {
-        return Math.pow(base,2);
+        return Math.pow(base, 2);
     }
 
     Cuadrado(double base, double altura) {
@@ -22,7 +22,8 @@ public class Cuadrado extends FiguraGeometrica {
             System.out.println("La base debe ser igual que la altura");
         }
     }
+
     public double perimetro() {
-        return 2*(base+altura);
+        return 2 * (base + altura);
     }
 }

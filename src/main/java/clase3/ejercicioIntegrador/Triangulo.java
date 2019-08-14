@@ -10,8 +10,8 @@ public class Triangulo extends FiguraGeometrica {
 
     @Override
     public double superficie() {
-        double s = perimetro()/2;
-        return Math.sqrt(s*(s-lados[0])*(s-lados[1])*(s-lados[2]));
+        double s = perimetro() / 2;
+        return Math.sqrt(s * (s - lados[0]) * (s - lados[1]) * (s - lados[2]));
     }
 
     Triangulo(double[] lados) {
@@ -21,6 +21,7 @@ public class Triangulo extends FiguraGeometrica {
             System.out.println("Debe ingresar 3 lados");
         }
     }
+
     public double perimetro() {
         double perimetro = 0;
         for (double lado : lados) {

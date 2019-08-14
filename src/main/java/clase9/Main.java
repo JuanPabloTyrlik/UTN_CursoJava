@@ -32,9 +32,9 @@ public class Main {
         String username = scanner.nextLine();
         System.out.print("\n\tIngrese contraseña: ");
         String password = scanner.nextLine();
-        User user = new User(username,password);
+        User user = new User(username, password);
         try {
-        controller.register(user);
+            controller.register(user);
             System.out.println(controller.login(user));
             System.out.println(controller.logOff(user));
         } catch (InvalidUser e) {

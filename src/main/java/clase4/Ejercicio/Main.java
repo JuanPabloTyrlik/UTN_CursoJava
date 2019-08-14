@@ -7,7 +7,7 @@ class Main {
     public static void main(String[] args) {
         List<Persona> personas = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            personas.add(new Persona("Nombre"+i, "Apellido"+i, ""+i));
+            personas.add(new Persona("Nombre" + i, "Apellido" + i, "" + i));
         }
         for (Persona persona : personas) {
             System.out.println(persona.imprimir());
@@ -17,6 +17,6 @@ class Main {
         for (Persona personai : inverso) {
             System.out.println(personai.imprimir());
         }
-        }
     }
+}
 

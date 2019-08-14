@@ -1,8 +1,8 @@
 package clase2;
 
-public class Directivo extends Empleado{
+public class Directivo extends Empleado {
     public String obtenerInformacion() {
-        return ("Directivo "+super.getNombre()+" "+super.getApellido());
+        return ("Directivo " + super.getNombre() + " " + super.getApellido());
     }
 
     public Directivo(String nombre, String apellido, String area) {

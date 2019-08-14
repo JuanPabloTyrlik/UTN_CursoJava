@@ -23,7 +23,7 @@ public class User {
         this.password = password;
     }
 
-    public boolean passwordOK (String password){
+    public boolean passwordOK(String password) {
         if (this.password.equals(password))
             return true;
         else

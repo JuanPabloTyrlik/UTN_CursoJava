@@ -34,11 +34,11 @@ class Main {
         System.out.println(autoMap);
         System.out.println("Diferentes:");
         for (Auto auto : diferentes) {
-            System.out.println("\t"+auto.getPatente());
+            System.out.println("\t" + auto.getPatente());
         }
         System.out.println("\nIguales:");
         for (Auto auto : iguales) {
-            System.out.println("\t"+auto.getPatente());
+            System.out.println("\t" + auto.getPatente());
         }
 
         ArrayList<Persona> personas = new ArrayList<>();
@@ -54,12 +54,10 @@ class Main {
         for (Persona persona : personas) {
             agenda.agregarPersonas(persona);
         }
-        System.out.println("Letra A: "+agenda.getPersonas("A"));
-        System.out.println("Letra J: "+agenda.getPersonas("J"));
-        System.out.println("Letra F: "+agenda.getPersonas("F"));
-        System.out.println("Letra G: "+agenda.getPersonas("G"));
-
-
+        System.out.println("Letra A: " + agenda.getPersonas("A"));
+        System.out.println("Letra J: " + agenda.getPersonas("J"));
+        System.out.println("Letra F: " + agenda.getPersonas("F"));
+        System.out.println("Letra G: " + agenda.getPersonas("G"));
 
 
     }

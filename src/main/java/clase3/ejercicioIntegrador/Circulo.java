@@ -11,15 +11,15 @@ public class Circulo extends FiguraGeometrica {
 
     @Override
     public double superficie() {
-        return Math.PI*Math.pow(radio,2);
+        return Math.PI * Math.pow(radio, 2);
     }
 
     public double perimetro() {
-        return 2*Math.PI*radio;
+        return 2 * Math.PI * radio;
     }
 
     Circulo(double radio, double[] centro) {
-        if (radio > 0 && centro.length >=2) {
+        if (radio > 0 && centro.length >= 2) {
             this.radio = radio;
             this.centro = centro;
         } else {

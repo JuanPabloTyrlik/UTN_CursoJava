@@ -11,7 +11,7 @@ public class Cochera {
         espacios = new HashMap<>();
     }
 
-    public void nuevoPiso (int numeroPiso, int lugares) {
+    public void nuevoPiso(int numeroPiso, int lugares) {
         espacios.put(numeroPiso, new Piso(lugares));
     }
 

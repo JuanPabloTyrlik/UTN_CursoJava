@@ -16,7 +16,7 @@ public class CocheraController {
         //imprime menu
     }
 
-    public void menu(){
+    public void menu() {
         //imprime el menu y decide que hacer a partir de la respuesta
     }
 
@@ -29,7 +29,7 @@ public class CocheraController {
         return false;
     }
 
-    public boolean finalizarEstacionmiento(Auto auto, Date horaFin ) {
+    public boolean finalizarEstacionmiento(Auto auto, Date horaFin) {
         //Finalizar estacionamiento para el auto y devolver monto a pagar
         //True o false para ver si se pudo realizar.
         return false;

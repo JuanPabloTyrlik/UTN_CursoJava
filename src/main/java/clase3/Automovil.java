@@ -7,7 +7,7 @@ class Automovil {
     private Tanque tanque;
 
     double hacerKM(double distKM) {
-        return (distKM*7/100)*tanque.getPrecioLitro();
+        return (distKM * 7 / 100) * tanque.getPrecioLitro();
     }
 
     public Automovil() {

@@ -11,14 +11,14 @@ public class AlumnoWriter {
         for (String materia : alumno.getMaterias().keySet()) {
             File aprobados = new File(Path.OUTPUT_FOLDER.getPath() + Year.now().toString() + materia + "-Aprobados.txt");
             File desaprobados = new File(Path.OUTPUT_FOLDER.getPath() + Year.now().toString() + materia + "-Desaprobados.txt");
-            BufferedWriter brAprobados = new BufferedWriter(new FileWriter(aprobados,true));
-            BufferedWriter brDesaprobados = new BufferedWriter(new FileWriter(desaprobados,true));
-            if (alumno.getMaterias().get(materia)>=4) {
-                brAprobados.write(alumno.getApellido()+", "+alumno.getNombre());
+            BufferedWriter brAprobados = new BufferedWriter(new FileWriter(aprobados, true));
+            BufferedWriter brDesaprobados = new BufferedWriter(new FileWriter(desaprobados, true));
+            if (alumno.getMaterias().get(materia) >= 4) {
+                brAprobados.write(alumno.getApellido() + ", " + alumno.getNombre());
                 brAprobados.newLine();
                 brAprobados.flush();
             } else {
-                brDesaprobados.write(alumno.getApellido()+", "+alumno.getNombre());
+                brDesaprobados.write(alumno.getApellido() + ", " + alumno.getNombre());
                 brDesaprobados.newLine();
                 brDesaprobados.flush();
             }

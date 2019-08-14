@@ -26,13 +26,13 @@ public class User implements IBroadcast {
 
     @Override
     public void receiveMessage(String message) {
-        System.out.println("Usuario: "+username+" Broadcast: "+message);
+        System.out.println("Usuario: " + username + " Broadcast: " + message);
     }
 
     @Override
     public void receiveMessage(String message, String username) {
         if (username.equals(this.username)) {
-            System.out.println("Usuario: "+username+" Private Message: "+message);
+            System.out.println("Usuario: " + username + " Private Message: " + message);
         }
     }
 }

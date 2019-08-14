@@ -23,7 +23,7 @@ class Papel implements Peleable {
     }
 
     @Override
-	public String toString() {
-		return "Papel";
-	}
+    public String toString() {
+        return "Papel";
+    }
 }

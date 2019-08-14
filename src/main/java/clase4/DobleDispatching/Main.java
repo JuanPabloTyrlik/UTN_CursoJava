@@ -9,17 +9,17 @@ class Main {
         Papel papel = new Papel();
         Tijera tijera = new Tijera();
 
-        System.out.printf("%s vs %s: %s\n",piedra.getType(),piedra.getType(),piedra.vs(piedra));
-        System.out.printf("%s vs %s: %s\n",piedra.getType(),papel.getType(),piedra.vs(papel));
-        System.out.printf("%s vs %s: %s\n",piedra.getType(),tijera.getType(),piedra.vs(tijera));
+        System.out.printf("%s vs %s: %s\n", piedra.getType(), piedra.getType(), piedra.vs(piedra));
+        System.out.printf("%s vs %s: %s\n", piedra.getType(), papel.getType(), piedra.vs(papel));
+        System.out.printf("%s vs %s: %s\n", piedra.getType(), tijera.getType(), piedra.vs(tijera));
         System.out.println();
-        System.out.printf("%s vs %s: %s\n",papel.getType(),piedra.getType(),papel.vs(piedra));
-        System.out.printf("%s vs %s: %s\n",papel.getType(),papel.getType(),papel.vs(papel));
-        System.out.printf("%s vs %s: %s\n",papel.getType(),tijera.getType(),papel.vs(tijera));
+        System.out.printf("%s vs %s: %s\n", papel.getType(), piedra.getType(), papel.vs(piedra));
+        System.out.printf("%s vs %s: %s\n", papel.getType(), papel.getType(), papel.vs(papel));
+        System.out.printf("%s vs %s: %s\n", papel.getType(), tijera.getType(), papel.vs(tijera));
         System.out.println();
-        System.out.printf("%s vs %s: %s\n",tijera.getType(),piedra.getType(),tijera.vs(piedra));
-        System.out.printf("%s vs %s: %s\n",tijera.getType(),papel.getType(),tijera.vs(papel));
-        System.out.printf("%s vs %s: %s\n",tijera.getType(),tijera.getType(),tijera.vs(tijera));
+        System.out.printf("%s vs %s: %s\n", tijera.getType(), piedra.getType(), tijera.vs(piedra));
+        System.out.printf("%s vs %s: %s\n", tijera.getType(), papel.getType(), tijera.vs(papel));
+        System.out.printf("%s vs %s: %s\n", tijera.getType(), tijera.getType(), tijera.vs(tijera));
 
     }
 }

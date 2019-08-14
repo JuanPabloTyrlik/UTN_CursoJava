@@ -1,7 +1,6 @@
 package clase8.Estacionamiento.View;
 
 import clase8.Estacionamiento.Controller.CocheraController;
-import clase8.Estacionamiento.Model.Vehiculo;
 
 import java.util.Scanner;
 
@@ -15,7 +14,7 @@ public class CocheraUI {
     private void estacionar() {
     }
 
-    private void retirar(){
+    private void retirar() {
 
     }
 

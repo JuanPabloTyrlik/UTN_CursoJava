@@ -1,6 +1,6 @@
 package clase12.agenda;
 
-public class PersonaException extends Exception{
+public class PersonaException extends Exception {
 
     public PersonaException() {
         super();

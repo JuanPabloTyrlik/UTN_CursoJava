@@ -11,7 +11,7 @@ public class Rectangulo extends FiguraGeometrica {
 
     @Override
     public double superficie() {
-        return base*altura;
+        return base * altura;
     }
 
     Rectangulo(double base, double altura) {
@@ -22,7 +22,8 @@ public class Rectangulo extends FiguraGeometrica {
             System.out.println("La base debe ser diferente que la altura");
         }
     }
+
     public double perimetro() {
-        return 2*(base+altura);
+        return 2 * (base + altura);
     }
 }

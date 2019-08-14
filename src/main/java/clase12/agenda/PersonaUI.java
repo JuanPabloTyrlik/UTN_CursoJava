@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class PersonaUI {
     private PersonaController pc = new PersonaController();
-    private void alta()
-    {
+
+    private void alta() {
         Persona p = new Persona();
         System.out.println("Ingreso nombre");
         Scanner sc = new Scanner(System.in);
@@ -19,66 +19,57 @@ public class PersonaUI {
         p.setDni(dni);
         try {
             pc.add(p);
-        }catch (PersonaException pe)
-        {
-            System.out.println("No pudo crear la persona "+pe.getMessage());
+        } catch (PersonaException pe) {
+            System.out.println("No pudo crear la persona " + pe.getMessage());
         }
         iniciar();
 
     }
 
-    public void consultar()
-    {
+    public void consultar() {
         System.out.println("Ingrese dni");
         Scanner sc = new Scanner(System.in);
         String dni = sc.nextLine();
         try {
-            Persona p =pc.search(dni);
-            if (p!=null)
-            {
+            Persona p = pc.search(dni);
+            if (p != null) {
                 System.out.println(p.toString());
-            }
-            else
-            {
+            } else {
                 System.out.println("no encontro el usario");
             }
-        }catch (PersonaException p)
-        {
-            System.out.println("No se encontró la persona "+p.getMessage());
+        } catch (PersonaException p) {
+            System.out.println("No se encontró la persona " + p.getMessage());
         }
         iniciar();
     }
-    public void verTodo()
-    {
+
+    public void verTodo() {
         pc.getAll();
         iniciar();
     }
-    public void testDB()
-    {
-        System.out.println("Test DB "+pc.testConnection());
+
+    public void testDB() {
+        System.out.println("Test DB " + pc.testConnection());
         iniciar();
     }
-    public void baja()
-    {
+
+    public void baja() {
 
         System.out.println("Ingrese dni");
         Scanner sc = new Scanner(System.in);
         String dni = sc.nextLine();
         try {
-            Persona p =pc.search(dni);
-            if (p!=null)
-            {
+            Persona p = pc.search(dni);
+            if (p != null) {
                 pc.delete(p);
             }
-        }catch (PersonaException pe)
-        {
-            System.out.println("No encontrar la persona "+pe.getMessage());
+        } catch (PersonaException pe) {
+            System.out.println("No encontrar la persona " + pe.getMessage());
         }
         iniciar();
     }
 
-    public void iniciar()
-    {
+    public void iniciar() {
         System.out.println("Bienvenido a la agenda");
         System.out.println("Ingrese la opcion deseada");
         System.out.println("1 Alta");
@@ -104,8 +95,7 @@ public class PersonaUI {
 
     }
 
-    public static void main (String args[])
-    {
+    public static void main(String args[]) {
         PersonaUI iu = new PersonaUI();
         iu.iniciar();
     }

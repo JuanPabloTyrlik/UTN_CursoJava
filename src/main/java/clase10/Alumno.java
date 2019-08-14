@@ -1,6 +1,5 @@
 package clase10;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,8 +14,8 @@ public class Alumno {
         this.apellido = apellido;
     }
 
-    public void actualizarNota (String materia, Double nota) {
-        materias.put(materia,nota);
+    public void actualizarNota(String materia, Double nota) {
+        materias.put(materia, nota);
     }
 
     public String getNombre() {

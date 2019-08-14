@@ -1,29 +1,29 @@
 package clase14.sin_hilos;
 
 public class Cliente {
-	private String nombre;
-	private int[] carroCompra;
-	
-	public Cliente(String nombre, int[] carroCompra) {
-		super();
-		this.nombre = nombre;
-		this.carroCompra = carroCompra;
-	}
+    private String nombre;
+    private int[] carroCompra;
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Cliente(String nombre, int[] carroCompra) {
+        super();
+        this.nombre = nombre;
+        this.carroCompra = carroCompra;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public int[] getCarroCompra() {
-		return carroCompra;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setCarroCompra(int[] carroCompra) {
-		this.carroCompra = carroCompra;
-	}
-	
+    public int[] getCarroCompra() {
+        return carroCompra;
+    }
+
+    public void setCarroCompra(int[] carroCompra) {
+        this.carroCompra = carroCompra;
+    }
+
 }

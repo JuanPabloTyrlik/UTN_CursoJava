@@ -35,7 +35,7 @@ public class PersonaController {
             Connection c = getConnection();
             try {
                 Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM Persona WHERE DNI = '" + p.getDni()+"'");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Persona WHERE DNI = '" + p.getDni() + "'");
                 if (rs.isBeforeFirst()) {
                     throw new PersonaException("La persona ya está en la agenda");
                 } else {
@@ -109,7 +109,7 @@ public class PersonaController {
             Connection c = getConnection();
             try {
                 PreparedStatement stmt = c.prepareStatement("SELECT * FROM Persona WHERE DNI=?");
-                stmt.setString(1,dni);
+                stmt.setString(1, dni);
                 //System.out.println(stmt);
                 ResultSet rs = stmt.executeQuery();
                 //Integer dni = Integer.parseInt(rs.getString("DNI"));

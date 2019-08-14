@@ -14,7 +14,7 @@ public class Lago {
     }
 
     public void setTemperatura(int temperatura) {
-        System.out.println("Temperatura: "+temperatura);
+        System.out.println("Temperatura: " + temperatura);
         for (Sensor sensor : sensors) {
             sensor.cambioTemperatura(temperatura);
         }

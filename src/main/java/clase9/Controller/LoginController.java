@@ -15,7 +15,7 @@ public class LoginController {
     }
 
     public synchronized static LoginController getInstance() {
-        if (controller==null)
+        if (controller == null)
             controller = new LoginController();
         return controller;
     }
@@ -25,17 +25,17 @@ public class LoginController {
             throw new InvalidUser();
     }
 
-    public String login(User u) throws InvalidUser{
+    public String login(User u) throws InvalidUser {
         if (!logged.add(u))
             throw new InvalidUser();
         else
-            return "Bienvenido "+u.getName();
+            return "Bienvenido " + u.getName();
     }
 
-    public String logOff(User u)throws InvalidUser {
+    public String logOff(User u) throws InvalidUser {
         if (!logged.remove(u))
             throw new InvalidUser();
         else
-            return "Hasta luego "+u.getName();
+            return "Hasta luego " + u.getName();
     }
 }

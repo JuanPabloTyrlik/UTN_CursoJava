@@ -1,6 +1,6 @@
 package clase7.Observer;
 
-public class Climatizador implements Sensor{
+public class Climatizador implements Sensor {
     @Override
     public void cambiodeTemperatura(int tempatura) {
         if (tempatura > 24) {

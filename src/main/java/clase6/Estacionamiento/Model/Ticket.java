@@ -32,12 +32,12 @@ public class Ticket {
 
     public void finalizar() {
         horaFin = new Date();
-        monto = Cochera.getPrecioPorHora()+Cochera.getPrecioPorHora()*(TimeUnit.HOURS.convert((horaFin.getTime()-horaInicio.getTime()),TimeUnit.MILLISECONDS));
+        monto = Cochera.getPrecioPorHora() + Cochera.getPrecioPorHora() * (TimeUnit.HOURS.convert((horaFin.getTime() - horaInicio.getTime()), TimeUnit.MILLISECONDS));
     }
 
     @Override
     public String toString() {
         return "Ticket{" + "monto=" + monto + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", patente='" + patente + '\'' + '}';
     }
-    
+
 }

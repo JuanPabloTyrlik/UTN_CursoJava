@@ -15,11 +15,12 @@ public class CocheraController {
     private List<Ticket> tickets = new ArrayList<>();
 
     private CocheraController() {
-            super();
+        super();
     }
 
     public synchronized static CocheraController getInstance() {
-        if (cochera == null) cochera = new CocheraController();
+        if (cochera == null)
+            cochera = new CocheraController();
         return cochera;
     }
 

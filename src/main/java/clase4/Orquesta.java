@@ -6,6 +6,7 @@ class Orquesta {
     public void tocar(InstrumentoMusical i) {
         i.tocar();
     }
+
     public void afinar(InstrumentoMusical i) {
         i.afinar();
     }

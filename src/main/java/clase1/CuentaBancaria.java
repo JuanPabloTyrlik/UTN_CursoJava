@@ -19,8 +19,8 @@ abstract class CuentaBancaria {
     void depositar(double monto) {
         saldo += monto;
         System.out.println("Deposito realizado");
-        System.out.println("Monto:\t"+monto);
-        System.out.println("Saldo:\t"+saldo);
+        System.out.println("Monto:\t" + monto);
+        System.out.println("Saldo:\t" + saldo);
     }
 
     public abstract void extraer(double monto);

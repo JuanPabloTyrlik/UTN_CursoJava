@@ -14,7 +14,7 @@ public class Lugar {
     }
 
     public boolean isOccupied() {
-        return (v!=null);
+        return (v != null);
     }
 
     public void estacionar(Vehiculo v) throws LugarOcupado {

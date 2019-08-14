@@ -22,9 +22,9 @@ class Piedra implements Peleable {
         return "empate";
     }
 
-	@Override
-	public String toString() {
-		return "Piedra";
-	}
+    @Override
+    public String toString() {
+        return "Piedra";
+    }
 
 }

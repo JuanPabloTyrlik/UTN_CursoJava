@@ -18,8 +18,8 @@ public class Lago {
         support.removePropertyChangeListener(pcl);
     }
 
-    public void setTemp (int temp) {
-        support.firePropertyChange("temp", temp-1, temp);
+    public void setTemp(int temp) {
+        support.firePropertyChange("temp", temp - 1, temp);
     }
 
 }

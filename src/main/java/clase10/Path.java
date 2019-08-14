@@ -2,8 +2,7 @@ package clase10;
 
 public enum Path {
 
-    INPUT_FOLDER("D:\\Java\\alumnos.txt"),
-    OUTPUT_FOLDER("D:\\Java\\");
+    INPUT_FOLDER("D:\\Java\\alumnos.txt"), OUTPUT_FOLDER("D:\\Java\\");
 
     private String path;
 

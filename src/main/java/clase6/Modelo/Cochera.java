@@ -30,14 +30,14 @@ public class Cochera {
     }
 
     public boolean lugarLibre() {
-        if (pisos.containsValue(false)){ //Revisar si funciona, sino recorrer keys -> flag y ver si hay alguno false.
+        if (pisos.containsValue(false)) { //Revisar si funciona, sino recorrer keys -> flag y ver si hay alguno false.
             return true;
         }
         return false;
     }
 
     public static Cochera getCochera(double precioHora, HashMap<Integer, ArrayList<Piso>> pisos) {
-        if (cochera==null)
+        if (cochera == null)
             cochera = new Cochera(precioHora, pisos);
         return cochera;
     }

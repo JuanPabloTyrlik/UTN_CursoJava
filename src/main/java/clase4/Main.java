@@ -18,13 +18,13 @@ class Main {
             autos[i] -> indice va de 0 a n-1, siendo n la longitud del array
 */
 
-        int[] enteros = {1,2,3,4,5};
+        int[] enteros = {1, 2, 3, 4, 5};
         int[] enteros2 = new int[5];
         for (int i = 0; i < enteros2.length; i++) {
             enteros2[i] = i;
         }
-        System.out.println("Array enteros: "+Arrays.toString(enteros));
-        System.out.println("Array enteros2: "+Arrays.toString(enteros2)+"\n");
+        System.out.println("Array enteros: " + Arrays.toString(enteros));
+        System.out.println("Array enteros2: " + Arrays.toString(enteros2) + "\n");
 
 /*
         Interfaces:
